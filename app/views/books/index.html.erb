@@ -1,0 +1,32 @@
+<h1>Listing sample books using DataMapper</h1>
+
+
+<%= link_to 'New book', new_book_path %> <br />
+<%= link_to 'Bulk Create Transactions', bulks_path %><br />
+
+<p>There are <%= @books.length %> Transaction records</p>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Amount</th>
+    <th>Date</th>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% @books.each do |book|  %>
+  <tr>
+    <td><%=h book.id %></td>
+    <td><%=h book.amount %></td>
+    <td><%=h book.date %></td>
+    <td><%=h book.name %></td>
+    <td><%=h book.description %></td>
+    <td><%= link_to 'Show', book %></td>
+    <td><%= link_to 'Edit', edit_book_path(book) %></td>
+    <td><%= link_to 'Destroy', book_path(book.id), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

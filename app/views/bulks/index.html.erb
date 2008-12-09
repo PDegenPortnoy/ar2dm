@@ -1,0 +1,7 @@
+<h1>Bulk Create Transactions</h1>
+
+<% form_tag(bulks_path) do -%>
+  <p>Indicate the number of transactions to be created: <%= text_field_tag :num %></p>
+  <%= submit_tag 'Create Transactions' %>
+<% end -%>
+
